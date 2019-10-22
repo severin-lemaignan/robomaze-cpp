@@ -18,7 +18,11 @@ Installation
 ```
 mkdir build
 cd build
-g++ ../src/controller.cpp ../src/astar.cpp -I../include  -lcpprest -lboost_system -lcrypto -pthread -oastar
+
+# due to an issue with libcpprest packaging, we need to help CMake a little
+# see https://github.com/Microsoft/cpprestsdk/issues/686#issuecomment-440622042
+cmake . -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/cmake
+make install
 ```
 
 Usage

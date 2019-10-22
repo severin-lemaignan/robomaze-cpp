@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 {
 
     if (argc != 2) {
-        cout << "Usage: astar <name robot>" << endl;
+        cout << "Usage: " << argv[0] << " <name robot>" << endl;
         return 1;
     }
 
