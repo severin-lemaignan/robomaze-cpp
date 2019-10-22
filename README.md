@@ -16,7 +16,9 @@ Installation
 ------------
 
 ```
-g++ controller.cpp astar.cpp  -lcpprest -lboost_system -lcrypto -pthread -oastar
+mkdir build
+cd build
+g++ ../src/controller.cpp ../src/astar.cpp -I../include  -lcpprest -lboost_system -lcrypto -pthread -oastar
 ```
 
 Usage
