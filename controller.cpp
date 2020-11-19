@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 {
 
     if (argc != 2) {
-        cout << "Usage: astar <name robot>" << endl;
+        cout << "Usage: " << argv[0] << " <name robot>" << endl;
         return 1;
     }
 
@@ -35,8 +35,7 @@ int main(int argc, char* argv[])
 
 
             // Build request URI and start the request.
-            uri_builder builder(U("/api"));
-            builder.append_query(U("move"), U("[\"" + string(argv[1]) +"\",\"" + next_move + "\"]"));
+            uri_builder builder(U("/move/" + string(argv[1]) +"/" + next_move));
             http_response response = client.request(methods::GET, builder.to_string()).get();
 
             if (response.status_code() == 200) {
